@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="exampage.css">
-    <link rel="stylesheet" href="font-awesome/css/all.min.css">
-
-
-
-</head>
-<body>
+    <link rel="stylesheet" href="exampage.css" />
+    <link rel="stylesheet" href="font-awesome/css/all.min.css" />
+  </head>
+  <body>
     <div class="container">
-        <button type="button" id="randomTestButton" class="button-link">Click here</button>
-        <!-- <button type="button" id="randomTestButton" class="button-link" style="padding: 10px;">Click</button> -->
-       
-        <h2>All The Best !......</h2>
+      <button type="button" id="randomTestButton" class="button-link">
+        Click here
+      </button>
+      <!-- <button type="button" id="randomTestButton" class="button-link" style="padding: 10px;">Click</button> -->
 
-        <!-- If any person give the test one by one here -->
+      <h2>All The Best !......</h2>
 
-        <!-- <button type="button"><a url="https://forms.gle/hXkr4NFQwX6iWZHv6"></a><i class="fa fa-phone-square" aria-hidden="true"></i>Test 1</button> -->
-         <!-- <button type="button"><a href="https://forms.gle/XhYyaAPyExnjvuCr7" class="button-link"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 1</a></button>
+      <!-- If any person give the test one by one here -->
+
+      <!-- <button type="button"><a url="https://forms.gle/hXkr4NFQwX6iWZHv6"></a><i class="fa fa-phone-square" aria-hidden="true"></i>Test 1</button> -->
+      <!-- <button type="button"><a href="https://forms.gle/XhYyaAPyExnjvuCr7" class="button-link"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 1</a></button>
         <button type="button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdUvU9VwjgONvUFhB6IqsS7G2ci5SbNOQYQRJjbtouYh7Kghg/viewform?fbzx=-7090549705010839203" class="button-link"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 2</a></button>
         <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 3</button>
         <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 4</button>
@@ -37,35 +36,60 @@
         <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 15</button>
         <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 16</button>
         <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 17</button> -->
-
     </div>
- 
-    <script>
-        // Array of test URLs
-        const testUrls = [
-            "https://forms.gle/XhYyaAPyExnjvuCr7", // Test 1
-            // <iframe src="https://forms.gle/XhYyaAPyExnjvuCr7" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe>
 
-            "https://docs.google.com/forms/d/e/1FAIpQLSdUvU9VwjgONvUFhB6IqsS7G2ci5SbNOQYQRJjbtouYh7Kghg/viewform?fbzx=-7090549705010839203", // Test 2 (replace with actual URL)
-            "https://docs.google.com/forms/d/e/1FAIpQLSeyM2ZjjIhnQOSt-CUUS8rDFDcXIPcBjodPTSb2KpGb-rYPGA/viewform"
-            // Add more test URLs as needed
-        ];
+    <script type="module">
+      import { getAuth } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+      import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
 
-        // Get the random test button element
-        const randomTestButton = document.getElementById('randomTestButton');
+      // Array of test URLs
+      const testUrls = [
+        "https://forms.gle/XhYyaAPyExnjvuCr7", // Test 1
+        // <iframe src="https://forms.gle/XhYyaAPyExnjvuCr7" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe>
 
-        // Generate a random test URL
-        function generateRandomTestUrl() {
-            const randomIndex = Math.floor(Math.random() * testUrls.length);
-            return testUrls[randomIndex];
-        }
+        "https://docs.google.com/forms/d/e/1FAIpQLSdUvU9VwjgONvUFhB6IqsS7G2ci5SbNOQYQRJjbtouYh7Kghg/viewform?fbzx=-7090549705010839203", // Test 2 (replace with actual URL)
+        "https://docs.google.com/forms/d/e/1FAIpQLSeyM2ZjjIhnQOSt-CUUS8rDFDcXIPcBjodPTSb2KpGb-rYPGA/viewform",
+        // Add more test URLs as needed
+      ];
 
-        // Add a click event listener to the random test button
-        randomTestButton.addEventListener('click', function() {
-            const randomTestUrl = generateRandomTestUrl();
-            window.location.href = randomTestUrl;
-        });
+      // Get the random test button element
+      const randomTestButton = document.getElementById("randomTestButton");
+
+      // Generate a random test URL
+      function generateRandomTestUrl() {
+        const randomIndex = Math.floor(Math.random() * testUrls.length);
+        return testUrls[randomIndex];
+      }
+
+      // Add a click event listener to the random test button
+      randomTestButton.addEventListener("click", function () {
+        const randomTestUrl = generateRandomTestUrl();
+        window.location.href = randomTestUrl;
+      });
+
+      const firebaseConfig = {
+        apiKey: "AIzaSyDH2EzjiMQ5ERao83ZWafQaBfK9PdVW20g",
+        authDomain: "cyber-warrior-1.firebaseapp.com",
+        projectId: "cyber-warrior-1",
+        storageBucket: "cyber-warrior-1.appspot.com",
+        messagingSenderId: "1010911021450",
+        appId: "1:1010911021450:web:ac120675740c826cbf6073",
+        measurementId: "G-680NEDDS06",
+      };
+
+      const app = initializeApp(firebaseConfig);
+      const user = getAuth(app);
+
+      //   console.log(user);
+
+      if (user.currentUser) {
+      } else {
+        alert("You are not logged in");
+        window.close();
+        window.location.href = "/";
+
+        document.body.innerHTML = "";
+      }
     </script>
-</body>
-
+  </body>
 </html>

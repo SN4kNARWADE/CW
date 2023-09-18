@@ -114,9 +114,7 @@
 
     const login = document.getElementById("login");
     login.onclick = async function () {
-      console.log("Clicked");
       const authuser = await signInWithPopup(auth, provider);
-      console.log(authuser);
     };
   </script>
 </html>
