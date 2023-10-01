@@ -29,7 +29,7 @@
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html">About Us</a></li>
           <li><a href="exampage.html">Go to Test</a></li>
-          <li><a href="./log.html">Login</a></li>
+          <!-- <li><a href="./log.html">Login</a></li> -->
           <li><a href="./contact.html">Contact Us</a></li>
 
         </ul>
@@ -50,35 +50,35 @@
 
       <div>
         <p>Name</p><br>
-        <input type="text" placeholder="Name" id="name" autocomplete="on"><br><br>
+        <input type="text" placeholder="Name" id="name" autocomplete="on" required><br><br>
       </div>
       <div>
         <p>Email</p><br>
-        <input type="text" placeholder="Email" id="email" autocomplete="on"><br><br>
+        <input type="text" placeholder="Email" id="email" autocomplete="on" required><br><br>
       </div>
       <div>
         <p>Create Password</p><br>
-        <input type="password" placeholder="Create Password" id="password" autocomplete="on"><br><br>
+        <input type="password" placeholder="Create Password" id="password" autocomplete="on" required><br><br>
       </div>
       <div>
         <p>Confirm Password</p><br>
-        <input type="password" placeholder="Confirm password" id="confirm_password" autocomplete="on"><br><br>
+        <input type="password" placeholder="Confirm password" id="confirm_password" autocomplete="on" required><br><br>
       </div>
       <div>
         <p>DOB</p><br>
-        <input type="date" class="date" id="date_of_birth" placeholder="dd-mm-yyyy" autocomplete="on"><br><br>
+        <input type="date" class="date" id="date_of_birth" placeholder="dd-mm-yyyy" autocomplete="on" required><br><br>
       </div>
       <div>
         <p>Mobile No</p><br>
-        <input type="text" class="number" placeholder="+91" id="mobile_no" autocomplete="on"><br><br>
+        <input type="text" class="number" placeholder="+91" id="mobile_no" autocomplete="on" required><br><br>
       </div>
       <div>
         <p>Education</p><br>
-        <input type="text" placeholder="Enter your Education" id="education" autocomplete="on"><br><br>
+        <input type="text" placeholder="Enter your Education" id="education" autocomplete="on" required><br><br>
       </div>
       <div>
         <p>College Name</p><br>
-        <input type="text" placeholder="Collage/School name" id="college_name" autocomplete="on"><br><br>
+        <input type="text" placeholder="Collage/School name" id="college_name" autocomplete="on" required><br><br>
       </div>
       <div>
         <button type="submit" value="Register" id="register">Register</button>
@@ -157,6 +157,10 @@
         })
         console.log("Document written with ID: ", response.id);
         form.reset();
+        alert("You can login now");
+        window.open("log.html",'_parent');
+        
+
       }
       catch (error) {
         console.error("Error adding document: ", error);
