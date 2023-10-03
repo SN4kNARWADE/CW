@@ -80,10 +80,12 @@
       const app = initializeApp(firebaseConfig);
       const user = getAuth(app);
 
-      //   console.log(user);
+        console.log(user);
 
       if (user.currentUser) {
-      } else {
+        
+        } 
+      else {
         alert("You are not logged in");
         window.close();
         window.open('index.html','_parent');
@@ -91,6 +93,9 @@
 
         // document.body.innerHTML = "";
       }
+
+
+
     </script>
   </body>
 </html>
