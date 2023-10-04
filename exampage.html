@@ -39,7 +39,10 @@
     </div>
 
     <script type="module">
-      import { getAuth } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
 
       // Array of test URLs
@@ -78,24 +81,20 @@
       };
 
       const app = initializeApp(firebaseConfig);
-      const user = getAuth(app);
+      const auth = getAuth(app);
 
-        console.log(user);
+      onAuthStateChanged(auth, (user) => {
+        if (user.auth) {
+        } else {
+          alert("You are not logged in");
+          window.close();
+          window.open("index.html", "_parent");
+          window.location.href = "/";
 
-      if (user.currentUser) {
-        
-        } 
-      else {
-        alert("You are not logged in");
-        window.close();
-        window.open('index.html','_parent');
-        // window.location.href = "/";
-
-        // document.body.innerHTML = "";
-      }
-
-
-
+          document.body.innerHTML = "";
+        }
+        console.log("auth changed", user);
+      });
     </script>
   </body>
 </html>
