@@ -46,7 +46,7 @@ nav ul li{
 .left{
     font-size: 1.1rem;
     
-  
+    
 }
 .logo a{
   color: #fff;
@@ -55,9 +55,16 @@ nav ul li{
 nav ul li a{
     color:rgb(41, 105, 161);
     text-decoration: none;
+    transition:font-size 0.3s;
 }
 nav ul li a:hover{
   color: #ffffff;
+ 
+  
+}
+
+.left ul:hover{
+  font-size:20px;
 }
 .btomj li {
     list-style: none;
@@ -196,11 +203,11 @@ nav ul li a:hover{
   }
   
 
-  @media screen and (max-width: 767px) {nav {
+   @media screen and (max-width: 767px) {nav {
     flex-direction: column;
     align-items: center;
     height: auto;
-}
+} 
 
 nav ul {
     flex-direction: column;
@@ -212,7 +219,9 @@ nav ul {
 
 nav ul li {
     margin: 10px 0;
+    
 }
+
 
 .logo a {
     margin-bottom: 10px;
@@ -284,3 +293,16 @@ nav ul li {
 @media screen and (min-width: 1024px) {
     /* Adjust styles as needed for large screens */
 }
+
+/* navbar */
+/* @media (max-width: 1000px){
+  nav{
+    padding: 0 40px 0 50px;
+  }
+}
+@media (max-width: 920px) {
+  nav .menu-btn i{
+    display: block;
+  }
+} */
+
