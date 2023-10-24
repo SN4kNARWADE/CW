@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Exam page</title>
     <link rel="stylesheet" href="exampage.css" />
     <link rel="stylesheet" href="font-awesome/css/all.min.css" />
   </head>
@@ -21,25 +21,14 @@
       <!-- <button type="button"><a url="https://forms.gle/hXkr4NFQwX6iWZHv6"></a><i class="fa fa-phone-square" aria-hidden="true"></i>Test 1</button> -->
       <!-- <button type="button"><a href="https://forms.gle/XhYyaAPyExnjvuCr7" class="button-link"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 1</a></button>
         <button type="button"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdUvU9VwjgONvUFhB6IqsS7G2ci5SbNOQYQRJjbtouYh7Kghg/viewform?fbzx=-7090549705010839203" class="button-link"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 2</a></button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 3</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 4</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 5</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 6</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 7</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 8</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 9</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 10</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 11</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 12</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 13</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 14</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 15</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 16</button>
-        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 17</button> -->
+        <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 3</button> -->
     </div>
 
     <script type="module">
-      import { getAuth } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+      import {
+        getAuth,
+        onAuthStateChanged,
+      } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
       import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
 
       // Array of test URLs
@@ -78,6 +67,7 @@
       };
 
       const app = initializeApp(firebaseConfig);
+
       const user = getAuth(app);
 
         console.log(user);
@@ -95,7 +85,21 @@
       }
 
 
+      const auth = getAuth(app);
 
+
+      onAuthStateChanged(auth, (user) => {
+        if (user.auth) {
+        } else {
+          alert("You are not logged in");
+          window.close();
+          window.open("index.html", "_parent");
+          window.location.href = "/";
+
+          document.body.innerHTML = "";
+        }
+        console.log("auth changed", user);
+      });
     </script>
   </body>
 </html>
