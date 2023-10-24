@@ -45,9 +45,16 @@ nav ul li{
 }
 .left{
     font-size: 1.1rem;
-    
-  
-}
+
+    }
+    .left ul li a{
+      transition: all .2s ease-out;
+    }
+
+    .left ul li a:hover{
+      transform: scale(1.15);
+      
+    }
 .logo a{
   color: #fff;
   text-decoration: none;
@@ -55,6 +62,7 @@ nav ul li{
 nav ul li a{
     color:rgb(41, 105, 161);
     text-decoration: none;
+   
 }
 nav ul li a:hover{
   color: #ffffff;
