@@ -67,7 +67,7 @@ text-decoration: none;
 display: block;
 }
 
-.dropdown-content a:hover {background-color: rgb(105, 220, 228);}
+.dropdown-content a:hover {background-color: rgb(12, 224, 239);}
 
 .dropdown:hover .dropdown-content {
 display: block;
