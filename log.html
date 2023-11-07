@@ -1,162 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
-    <title>my login</title>
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link rel="stylesheet" href="log.css" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway:wght@300&display=swap"
-      rel="stylesheet"
-    />
-  </head>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width" />
+  <title>my login</title>
 
-  <body>
-    <header id="header">
-      <nav class="container">
-        <div class="right">
-          <h1 class="logo"><a href="./index.html">CYBER WARRIORS</a></h1>
-        </div>
-        <div class="left">
-          <ul>
-            <li><a href="./index.html">Home</a></li>
-            <li><a href="./about.html">About Us</a></li>
-            <li><a href="./exampage.html">Go to Test</a></li>
-            <!-- <li><a href="./log.html">Login</a></li> -->
-            <li><a href="./contact.html">Contact Us</a></li>
-          </ul>
-        </div>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="log.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Raleway:wght@300&display=swap"
+    rel="stylesheet" />
+</head>
+
+<body>
+  <header id="header">
+    <nav class="container">
+      <div class="right">
+        <h1 class="logo"><a href="./index.html">CYBER WARRIORS</a></h1>
+      </div>
+      <div class="left">
+        <ul>
+          <li><a href="./index.html">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li><a href="./exampage.html">Go to Test</a></li>
+          <!-- <li><a href="./log.html">Login</a></li> -->
+          <li><a href="./contact.html">Contact Us</a></li>
+        </ul>
+      </div>
 
       </div>
       <div class="dropdown">
         <button class="dropbtn" style="margin-left: 0px;"><i class="fa-solid fa-bars"></i></button>
-         <div class="dropdown-content">
-           <a href="index.html">Home</a>               
-           <a href="about.html">About Us</a>
-           <a href="log.html">Login</a>
-           <a href="index.html">Contact Us</a>
-           
-          </div>
+        <div class="dropdown-content">
+          <a href="index.html">Home</a>
+          <a href="about.html">About Us</a>
+          <a href="log.html">Login</a>
+          <a href="./contact.html">Contact Us</a>
+
+        </div>
       </div>
-        <!-- <div class="btomj">
+      <!-- <div class="btomj">
         <li><button class="btn"><a href="/register.html">Register</a></button></li>
       </div> -->
-      </nav>
-    </header>
-    <section>
-      <center>
-        <form id="form">
-          <div>
-            <h1 class="heading">Log in</h1>
-          </div>
-          <br /><br />
-          <div>
-            <button id="login" type="button">Continue with Google</button>
-          </div>
+    </nav>
+  </header>
+  <section>
+    <center>
+      <form id="form">
+        <div>
+          <h1 class="heading">Log in</h1>
+        </div>
+        <br /><br />
+        <div>
+          <button id="login" type="button">Continue with Google</button>
+        </div>
+        <br />
+        <div>
+          <p>Username</p>
           <br />
-          <div>
-            <p>Username</p>
-            <br />
-            <input
-              type="text"
-              placeholder="Email"
-              id="email"
-              autocomplete="off"
-            /><br />
-          </div>
+          <input type="text" placeholder="Email" id="email" autocomplete="off" /><br />
+        </div>
+        <br />
+        <div>
+          <p>Password <a href="#" class="forgot">forgot?</a></p>
           <br />
-          <div>
-            <p>Password <a href="#" class="forgot">forgot?</a></p>
-            <br />
-            <input
-              type="password"
-              placeholder="Enter your Password"
-              id="password"
-              autocomplete="off"
-            /><br />
-          </div>
-          <br /><br />
-          <div>
-            <input type="submit" value="Log In" id="button" />
-          </div>
-          <span class="span">
-            not have account? <a href="./reg.html">Register now</a> </span
-          ><br /><br />
-        </form>
-      </center>
-    </section>
-  </body>
-  <script type="module">
-    // Import the functions you need from the SDKs you need
-    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
-    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
-    import {
-      getAuth,
-      GoogleAuthProvider,
-      signInWithEmailAndPassword,
-      signInWithPopup,
-      onAuthStateChanged,
-    } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
-    import {
-      getFirestore,
-      collection,
-      doc,
-      addDoc,
-    } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
-    // TODO: Add SDKs for Firebase products that you want to use
-    // https://firebase.google.com/docs/web/setup#available-libraries
+          <input type="password" placeholder="Enter your Password" id="password" autocomplete="off" /><br />
+        </div>
+        <br /><br />
+        <div>
+          <input type="submit" value="Log In" id="button" />
+        </div>
+        <span class="span">
+          not have account? <a href="./reg.html">Register now</a> </span><br /><br />
+      </form>
+    </center>
+  </section>
+</body>
+<script type="module">
+  // Import the functions you need from the SDKs you need
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+  import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
+  import {
+    getAuth,
+    GoogleAuthProvider,
+    signInWithEmailAndPassword,
+    signInWithPopup,
+    onAuthStateChanged
+  } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
 
-    // Your web app's Firebase configuration
-    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
-    const firebaseConfig = {
-      apiKey: "AIzaSyDH2EzjiMQ5ERao83ZWafQaBfK9PdVW20g",
-      authDomain: "cyber-warrior-1.firebaseapp.com",
-      projectId: "cyber-warrior-1",
-      storageBucket: "cyber-warrior-1.appspot.com",
-      messagingSenderId: "1010911021450",
-      appId: "1:1010911021450:web:ac120675740c826cbf6073",
-      measurementId: "G-680NEDDS06",
-    };
+  // TODO: Add SDKs for Firebase products that you want to use
+  // https://firebase.google.com/docs/web/setup#available-libraries
 
-    const app = initializeApp(firebaseConfig);
-    const auth = getAuth(app);
-    const provider = new GoogleAuthProvider();
+  // Your web app's Firebase configuration
+  // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+  const firebaseConfig = {
+    apiKey: "AIzaSyDH2EzjiMQ5ERao83ZWafQaBfK9PdVW20g",
+    authDomain: "cyber-warrior-1.firebaseapp.com",
+    projectId: "cyber-warrior-1",
+    storageBucket: "cyber-warrior-1.appspot.com",
+    messagingSenderId: "1010911021450",
+    appId: "1:1010911021450:web:ac120675740c826cbf6073",
+    measurementId: "G-680NEDDS06",
+  };
 
-    const login = document.getElementById("login");
-    const button = document.getElementById("button");
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const provider = new GoogleAuthProvider();
+
+  const google = document.getElementById("login");
+
+
+
+
+
+  google.onclick = function () {
+    signInWithPopup(auth, provider).then((authuser) => {
+      // console.log(authuser);
+
+      window.open("home.html", "_parent").alert("Login Successfull!");
+    });
+  };
+
+ document.body.onload = ()=>{
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      window.open("home.html", "_parent");
+    }
+    // console.log("auth changed", user);
+    
+  });
+ }
+ 
+  document.getElementById("form").addEventListener("submit", (event) => {
+    event.preventDefault();
+  })
+  document.getElementById("button").addEventListener("click",()=>{
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
-    login.onclick = async function () {
-      signInWithPopup(auth, provider).then((authuser) => {
-        console.log(authuser);
-        // window.open("index.html", "_parent").alert("Login Successfull!");
+    
+   
+    // console.log(email);
+    // console.log(password);
+    
+    signInWithEmailAndPassword(auth,email,password )
+      .then((userCredential) => {
+        // Signed in 
+        const user = userCredential.user;
+        location.replace("home.html");
+        alert("Login Successfull!")
+        // ...
+      })
+      .catch((error) => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        alert(errorMessage);
       });
-    };
+  })
 
-    onAuthStateChanged(auth, (user) => {
-      if (user.auth) {
-        window.open("index.html", "_parent").alert("Login Successfull!");
-      }
-      console.log("auth changed", user);
-    });
 
-    button.onclick = () => {
-      signInWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          // Signed in
-          const user = userCredential.user;
+</script>
 
-          // ...
-        })
-        .catch((error) => {
-          const errorCode = error.code;
-          const errorMessage = error.message;
-        });
-      window.open("index.html", "_parent").alert("Login Successfull!");
-    };
-  </script>
 </html>

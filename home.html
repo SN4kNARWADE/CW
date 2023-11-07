@@ -25,15 +25,15 @@
     <header id="header">
       <nav class="container">
         <div class="right">
-          <h1 class="logo"><a href="./index.html"> CYBER WARRIORS</a></h1>
+          <h1 class="logo"><a href="#"> CYBER WARRIORS</a></h1>
         </div>
         <div class="left">
           <ul>
-            <li><a href="./index.html">Home</a></li>
+            <li><a href="home.html">Home</a></li>
             <li><a href="./about.html">About Us</a></li>
-            <li><a href="#" id="test">Go to Test</a></li>
-            <li><a href="./contact.html" target="_parent">Contact us</a></li>
-            <li><a href="./log.html" target="_parent">Login</a></li>
+            <li><a href="./exampage.html">Go to Test</a></li>
+            <li><a href="./contact.html" target="_blank">Contact us</a></li>
+            <li ><button id="Logout">Logout</li>
           </ul>
         </div>
         <div class="dropdown">
@@ -41,16 +41,16 @@
             <i class="fa-solid fa-bars"></i>
           </button>
           <div class="dropdown-content">
-            <a href="index.html">Home</a>
+            <a href="#">Home</a>
             <a href="about.html">About Us</a>
-            <a href="./log.html">Login</a>
-            <a href="index.html">Contact Us</a>
+            <!-- <a href="#" class="Logout">Logout</a> -->
+            <a href="./contact.html">Contact Us</a>
           </div>
         </div>
         <div class="btomj">
           <li>
-            <button class="btn">
-              <a href="./reg.html" target="_parent">Register</a>
+            <button class="btn" >
+              <a href="./home.html" target="_blank" id="btn">Register</a>
             </button>
           </li>
         </div>
@@ -143,12 +143,69 @@
         ],
         typeSpeed: 50,
       });
-      const testButton = document.getElementById("test");
-      testButton.onclick = ()=>{
-        alert("You are not logged in !!");
-
-      }
     </script>
- 
+    
   </body>
+  <script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-analytics.js";
+    import { getAuth, signOut,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.5.2/firebase-auth.js";
+    // TODO: Add SDKs for Firebase products that you want to use
+    // https://firebase.google.com/docs/web/setup#available-libraries
+
+    // Your web app's Firebase configuration
+    // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+    const firebaseConfig = {
+      apiKey: "AIzaSyDH2EzjiMQ5ERao83ZWafQaBfK9PdVW20g",
+      authDomain: "cyber-warrior-1.firebaseapp.com",
+      projectId: "cyber-warrior-1",
+      storageBucket: "cyber-warrior-1.appspot.com",
+      messagingSenderId: "1010911021450",
+      appId: "1:1010911021450:web:ac120675740c826cbf6073",
+      measurementId: "G-680NEDDS06",
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+  //   const googleAuth = localStorage.getItem("google");
+  //   const authState = localStorage.getItem("onauth");
+  //   const emailAndPassword = localStorage.getItem("password");
+  
+    
+
+   document.getElementById("Logout").onclick = ()=>{
+    
+      signOut(auth)
+        .then(() => {
+          // Sign-out successful.
+          window.open("index.html","_parent").alert("Logout Successfull!");
+        })
+        .catch((error) => {
+          alert(error);
+        });
+      signOut(auth)
+        .then(() => {
+          // Sign-out successful.
+          window.open("index.html","_parent").alert("Logout Successfull!");
+        })
+        .catch((error) => {
+          alert(error);
+        });
+      signOut(auth)
+        .then(() => {
+          // Sign-out successful.
+          window.open("index.html","_parent").alert("Logout Successfull!");
+        })
+        .catch((error) => {
+          alert(error);
+        });
+   }
+   document.getElementById("btn").onclick=()=>{
+    alert("You are already registered !!");
+   }
+    
+  </script>
 </html>

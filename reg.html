@@ -30,7 +30,7 @@
           <li><a href="./index.html">Home</a></li>
           <li><a href="./about.html">About Us</a></li>
           <li><a href="exampage.html">Go to Test</a></li>
-          <!-- <li><a href="./log.html">Login</a></li> -->
+          <li><a href="./log.html">Login</a></li>
           <li><a href="./contact.html">Contact Us</a></li>
 
         </ul>
@@ -106,8 +106,8 @@
   // Import the functions you need from the SDKs you need
   import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
   import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
-  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
-  import { getFirestore, collection, doc, addDoc } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
+  import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut,onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+  import { getFirestore, collection, doc, addDoc,setDoc } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-firestore.js";
   // TODO: Add SDKs for Firebase products that you want to use
   // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -151,11 +151,11 @@
     createUserWithEmailAndPassword(auth, email, password).then(async (userCredential) => {
       // Signed in 
       const user = userCredential.user;
-      console.log(user);
+      // console.log(user);
       // ...
 
       try {
-        const response = await addDoc(collection(db, "users"), {
+        const response = await setDoc(doc(db, "users",email), {
           name: name,
           email: email,
           password: password,
@@ -165,10 +165,11 @@
           education: education,
           college_name: college_name
         })
-        console.log("Document written with ID: ", response.id);
+        console.log("Document written with email: ", email);
+        alert("Registration Successfull !!");
         form.reset();
-        alert("You can login now");
-        window.open("log.html",'_parent');
+        
+        location.replace("home.html");
         
 
       }
@@ -179,11 +180,12 @@
       const errorCode = error.code;
       const errorMessage = error.message;
       // ..
-      console.log(errorMessage);
-      alert(error);
+      
+      alert(errorMessage);
     });
     
   });
+  
 
 </script>
 
