@@ -275,7 +275,16 @@ footer {
   background-color: #78d1df;
   /* height: 233px; */
 }
-
+.footer-second ul li {
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.footer-second ul li a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #4d778a ;
+}
 .footer {
   display: flex;
   padding: 23px 122px;
