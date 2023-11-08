@@ -20,7 +20,7 @@
             <ul>
               <li><a href="./index.html">Home</a></li>
               <li><a href="./about.html">About Us</a></li>
-              <li><a href="#">Go to Test</a></li>
+              <li id="test"><a href="#">Go to Test</a></li>
               <li><a href="./login.html">Login</a></li>
               <li><a href="./contact.html">Contact Us</a></li>
     
@@ -95,6 +95,9 @@
                     console.error("Email sending failed:", error);
                     alert("Message sending failed");
                 });
+        }
+        document.getElementById("test").onclick = ()=>{
+          alert("Please go to Home page !!");
         }
     </script>
     

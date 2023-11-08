@@ -20,7 +20,7 @@
         <ul>
           <li id="abt"><a href="#">Home</a></li>
           <li><a href="about.html">About Us</a></li>
-          <li><a href="exampage.html">Go to Test</a></li>
+          <li id="test"><a href="#">Go to Test</a></li>
           <li><a href="./log.html">Login</a></li>
           <li><a href="./contact.html">Contact Us</a></li>
 
@@ -173,6 +173,14 @@
     document.getElementById("abt").addEventListener("click",()=>{
       location.replace("index.html", "_parent");
     })
+  }
+  document.getElementById("test").onclick = ()=>{
+    if(user){
+      location.replace("exampage.html");
+    }
+    else{
+      alert("You are not logged in !!");
+    }
   }
 });
 </script>
