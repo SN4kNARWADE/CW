@@ -89,15 +89,14 @@
 
 
       onAuthStateChanged(auth, (user) => {
-        if (user.auth) {
-        } else {
+        if (!user) {
           alert("You are not logged in");
           window.close();
           window.open("index.html", "_parent");
           window.location.href = "/";
 
           document.body.innerHTML = "";
-        }
+        } 
         console.log("auth changed", user);
       });
     </script>
