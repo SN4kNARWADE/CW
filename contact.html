@@ -1,105 +1,142 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contactus</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"/>
-    <link rel="stylesheet" href="contact.css">
-    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contactus</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+  <link rel="stylesheet" href="contact.css">
+  <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
 
 </head>
-<body>
-    
-    <header id="header">
-        <nav class="container">
-          <div class="right">
-            <h1 class="logo"><a href="./index.html">CYBER WARRIORS</a></h1>
-          </div>
-          <div class="left">
-            <ul>
-              <li><a href="./index.html">Home</a></li>
-              <li><a href="./about.html">About Us</a></li>
-              <li id="test"><a href="#">Go to Test</a></li>
-              <li><a href="./login.html">Login</a></li>
-              <li><a href="./contact.html">Contact Us</a></li>
-    
-            </ul>
-    
-          </div>
-          <div class="dropdown">
-            <button class="dropbtn" style="margin-left: 0px;"><i class="fa-solid fa-bars"></i></button>
-             <div class="dropdown-content">
-               <a href="index.html">Home </a>               
-               <a href="about.html">About Us </a>
-               <a href="log.html">Login </a>
-               <a href="index.html">Contact Us </a>
-               
-              </div>
-          </div>
-          <div class="btomj">
-            <li><button class="btn"><a href="./register.html" target="_blank">Register</a></button></li>
-          </div>
-         
-        </nav>
-      </header>
 
-    <div class="container1">
-        <div class="header">
-            <h2>Contact us</h2>
-            <p>Lets get in touch, Send us a message:</p>
+<body>
+
+  <header id="header">
+    <nav class="container">
+      <div class="right">
+        <h1 class="logo"><a href="./index.html">CYBER WARRIORS</a></h1>
+      </div>
+      <div class="left">
+        <ul>
+          <li id="abt"><a href="#">Home</a></li>
+          <li><a href="./about.html">About Us</a></li>
+          <li id="test"><a href="#">Go to Test</a></li>
+          <li><a href="./login.html">Login</a></li>
+          <li><a href="./contact.html">Contact Us</a></li>
+
+        </ul>
+
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn" style="margin-left: 0px;"><i class="fa-solid fa-bars"></i></button>
+        <div class="dropdown-content">
+          <a href="index.html">Home </a>
+          <a href="about.html">About Us </a>
+          <a href="log.html">Login </a>
+          <a href="index.html">Contact Us </a>
+
         </div>
-        <div class="row">
-            <div class="column">
-                <img src="contact.jpeg">
-            </div>
-            <div class="column">
-                <!-- <form action="" method="POST" onsubmit="sendEmail(); reset(); return false;">
+      </div>
+      <div class="btomj">
+        <li><button class="btn"><a href="./register.html" target="_blank">Register</a></button></li>
+      </div>
+
+    </nav>
+  </header>
+
+  <div class="container1">
+    <div class="header">
+      <h2>Contact us</h2>
+      <p>Lets get in touch, Send us a message:</p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <img src="contact.jpeg">
+      </div>
+      <div class="column">
+        <!-- <form action="" method="POST" onsubmit="sendEmail(); reset(); return false;">
                     <input type="text" id="name" name="name" placeholder="Name" required>
                     <input type="email" name="email" placeholder="Email" required>
                     <input type="tel" name="phone" placeholder="Mobile No" required>
                     <textarea name="message" id="message" cols="30" rows="10" placeholder="Your Message"></textarea>
                     <button id="btn" type="submit">Submit</button>
                 </form> -->
-                <script src="https://sheetdb.io/s/f/ejo0k47y4g28u.js">
-                    
-                </script>
-            </div>
-        </div>
+        <script src="https://sheetdb.io/s/f/ejo0k47y4g28u.js">
+
+        </script>
+      </div>
     </div>
-    <script src="https://smtpjs.com/v3/smtp.js"></script>
-    <script>
-        // Initialize Email.js with your user ID
-        emailjs.init("user_your_user_id");
-    
-        function sendEmail() {
-            // Create the email parameters
-            var params = {
-                secureTokek: "56bc2b1b-7d69-42a4-ba75-091609b6193f",
-                To: 'sanikanarwade325@gmail.com',
-                From: document.getElementById("email").value,
-                Subject: "New Contact Form Enquiry",
-                Body: "Name: " + document.getElementById("name").value +
-                      "<br>Email: " + document.getElementById("email").value +
-                      "<br>Mobile No: " + document.getElementById("mobile_no").value +
-                      "<br>Your Message: " + document.getElementById("your_message").value
-            };
-    
-            // Send the email
-            emailjs.send("your_service_id", "your_template_id", params)
-                .then(function(response) {
-                    console.log("Email sent successfully:", response);
-                    alert("Message sent successfully");
-                })
-                .catch(function(error) {
-                    console.error("Email sending failed:", error);
-                    alert("Message sending failed");
-                });
-        }
-        document.getElementById("test").onclick = ()=>{
-          alert("Please go to Home page !!");
-        }
-    </script>
-    
+  </div>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    // Initialize Email.js with your user ID
+    emailjs.init("user_your_user_id");
+
+    function sendEmail() {
+      // Create the email parameters
+      var params = {
+        secureTokek: "56bc2b1b-7d69-42a4-ba75-091609b6193f",
+        To: 'sanikanarwade325@gmail.com',
+        From: document.getElementById("email").value,
+        Subject: "New Contact Form Enquiry",
+        Body: "Name: " + document.getElementById("name").value +
+          "<br>Email: " + document.getElementById("email").value +
+          "<br>Mobile No: " + document.getElementById("mobile_no").value +
+          "<br>Your Message: " + document.getElementById("your_message").value
+      };
+
+      // Send the email
+      emailjs.send("your_service_id", "your_template_id", params)
+        .then(function (response) {
+          console.log("Email sent successfully:", response);
+          alert("Message sent successfully");
+        })
+        .catch(function (error) {
+          console.error("Email sending failed:", error);
+          alert("Message sending failed");
+        });
+    }
+    document.getElementById("test").onclick = () => {
+      alert("Please go to Home page !!");
+    }
+  </script>
+  <script type="module">
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-analytics.js";
+    import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.3.0/firebase-auth.js";
+    const firebaseConfig = {
+      apiKey: "AIzaSyDH2EzjiMQ5ERao83ZWafQaBfK9PdVW20g",
+      authDomain: "cyber-warrior-1.firebaseapp.com",
+      projectId: "cyber-warrior-1",
+      storageBucket: "cyber-warrior-1.appspot.com",
+      messagingSenderId: "1010911021450",
+      appId: "1:1010911021450:web:ac120675740c826cbf6073",
+      measurementId: "G-680NEDDS06"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+
+    const auth = getAuth();
+    onAuthStateChanged(auth, (user) => {
+      if (user) {
+
+        document.getElementById("abt").addEventListener("click", () => {
+          location.replace("home.html", "_parent");
+        })
+        // ...
+      } else {
+        // User is signed out
+        document.getElementById("abt").addEventListener("click", () => {
+          location.replace("index.html", "_parent");
+        })
+      }
+    });
+  </script>
+
 </body>
+
 </html>
