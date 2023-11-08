@@ -67,24 +67,6 @@
       };
 
       const app = initializeApp(firebaseConfig);
-
-      const user = getAuth(app);
-
-        console.log(user);
-
-      if (user.currentUser) {
-        // window.open('exams.html','_parent');
-        } 
-      else {
-        alert("You are not logged in");
-        window.close();
-        window.open('index.html','_parent');
-        // window.location.href = "/";
-
-        // document.body.innerHTML = "";
-      }
-
-
       const auth = getAuth(app);
 
 
@@ -92,7 +74,7 @@
         if (!user) {
           alert("You are not logged in");
           window.close();
-          window.open("index.html", "_parent");
+          location.replace("index.html");
           window.location.href = "/";
 
           document.body.innerHTML = "";
