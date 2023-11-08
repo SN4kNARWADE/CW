@@ -71,15 +71,16 @@
 
 
       onAuthStateChanged(auth, (user) => {
-        if (!user) {
-          alert("You are not logged in");
-          window.close();
-          location.replace("index.html");
-          window.location.href = "/";
-
-          document.body.innerHTML = "";
+        if (user) {
+          alert("All the Best !!");
+         
+          
         } 
-        console.log("auth changed", user);
+        else{
+          alert("You are not logged in !!");
+          location.replace("index.html");
+        }
+        // console.log("auth changed", user);
       });
     </script>
   </body>
