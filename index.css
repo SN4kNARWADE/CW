@@ -8,6 +8,7 @@ body {
   color: white;
   background-color: rgb(221, 240, 243);
   font-family: 'Poppins', sans-serif;
+  overflow-x: hidden;
 
 }
 .LOGOOFCYBER{
@@ -50,9 +51,10 @@ nav ul li{
     .left ul li a{
       transition: all .2s ease-out;
     }
-
+    
     .left ul li a:hover{
       transform: scale(1.15);
+      cursor: pointer;
       
     }
 .logo a{
@@ -70,7 +72,7 @@ nav ul{
   display: flex;
   justify-content: center;
   overflow: hidden;
-  
+  align-items: center;
 }
 nav ul li{
   list-style: none;
@@ -134,7 +136,7 @@ background-color:rgb(17, 233, 253);
 color: #fff;
 text-decoration: none;
 }
-nav ul li a{
+nav ul li a,button{
 
     color:rgb(41, 105, 161);
     text-decoration: none;
@@ -155,7 +157,25 @@ color: #f45106;
   font-size: 20px;
   
 }
-
+.left ul li button{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:rgb(210, 241, 245);
+  width:25px;
+  height: 35px;
+  border:1px solid #f7f5f5;
+  padding:12px 50px;
+  border-radius:6px;
+  transition:background 0.5s;
+  text-decoration: none;
+  color:rgb(12, 88, 155) ;
+  font-size: 20px;
+  text-align: center;
+}
+.left ul li button:hover{
+  background:rgb(138, 232, 232);
+}
 .btn{
   display: inline-block;
   background:rgb(210, 241, 245);
