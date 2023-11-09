@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="font-awesome/css/all.min.css" />
   </head>
   <body>
-    <div class="container">
+    <div class="container" id="container">
       <button type="button" id="randomTestButton" class="button-link">
         Click here
       </button>
@@ -24,6 +24,19 @@
         <button type="button"><i class="fa fa-phone-square" aria-hidden="true"></i>Test 3</button> -->
     </div>
 
+    <div
+      id="exam_screen"
+      style="
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      "
+    >
+      <iframe id="iframe" style="height: 100vh; width: 100vw"> </iframe>
+    </div>
+
     <script type="module">
       import {
         getAuth,
@@ -33,13 +46,41 @@
 
       // Array of test URLs
       const testUrls = [
-        "https://forms.gle/XhYyaAPyExnjvuCr7", // Test 1
-        // <iframe src="https://forms.gle/XhYyaAPyExnjvuCr7" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe>
+        // "https://forms.gle/XhYyaAPyExnjvuCr7", // Test 1
+        // // <iframe src="https://forms.gle/XhYyaAPyExnjvuCr7" width="100%" height="100%" frameborder="0" scrolling="auto"></iframe>
 
-        "https://docs.google.com/forms/d/e/1FAIpQLSdUvU9VwjgONvUFhB6IqsS7G2ci5SbNOQYQRJjbtouYh7Kghg/viewform?fbzx=-7090549705010839203", // Test 2 (replace with actual URL)
-        "https://docs.google.com/forms/d/e/1FAIpQLSeyM2ZjjIhnQOSt-CUUS8rDFDcXIPcBjodPTSb2KpGb-rYPGA/viewform",
+        // "https://docs.google.com/forms/d/e/1FAIpQLSdUvU9VwjgONvUFhB6IqsS7G2ci5SbNOQYQRJjbtouYh7Kghg/viewform?fbzx=-7090549705010839203", // Test 2 (replace with actual URL)
+        // "https://docs.google.com/forms/d/e/1FAIpQLSeyM2ZjjIhnQOSt-CUUS8rDFDcXIPcBjodPTSb2KpGb-rYPGA/viewform",
         // Add more test URLs as needed
+        "https://docs.google.com/forms/d/e/1FAIpQLSfCjAet-_Tnv_qzpmfi5m2MJGFiPKkL3p7dyD0EWsP5KoFAhQ/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdSnjgSahjRwPt9T1_d-TTV1KVMWcxJ40GRkS1X82M4GJxIvw/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdwJuHC-evdabPa2BBf45X2ce1TpR88kNgFmf_xA0l7ytTbBw/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfiAY-A4qjaFvVzhzmsAWClE_L04mwWaLnZ5XcCVwg9-AqOhA/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSe7WbW5UD47mOc9zqZCMJfZaPkMhucBk8VnLSV0BbXt9I58yQ/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLScC0zEu1cVORyi6N319rFHrfU9AEwWlOgDxywWgnqrRvl-1GQ/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSeyM2ZjjIhnQOSt-CUUS8rDFDcXIPcBjodPTSb2KpGb-rYPGA/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfU4mcllqREGYa_jrK_vTx1A3Grd3d5kMfWQYUt5DM7_4c0rw/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdF14DsEwvdQKWo6P2qctX9MwO7fdUbMSIDktsxNLVdUBDqwg/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdkH6jUt9ehQTcSC1JKAicytVSnc8zYdOu3QGNuc0zjqTtjmg/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSeM9BAv3YSJCS6JmgXPRdSeykSw7-kGbvrkiBrcagDHNugwsg/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfopqi_PdyCM8XjkdGML4fP6ZhPsXFiYg7Bzt37I4ORTV9JzQ/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfpea2jNXXvPfr9wlKUJz5lZrD9-gzJf6dWcXM7OLLvZNeNfw/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSds3YMwo4DdhS3dSHaRQ6lWib8vu0n8unOb9UKXcqN-S8F44A/",
+        "https://docs.google.com/forms/d/e/1FAIpQLSdUvU9VwjgONvUFhB6IqsS7G2ci5SbNOQYQRJjbtouYh7Kghg/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSeyThx0zR6pEWnZ-eKFFGHengaTeTFfB2EIClES0PvNXE5cuA/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSfMiqNhs-9byA_mHngKtPY64Rknl-n8k3NjcZZxm4uo1f2XNg/viewform",
+        "https://docs.google.com/forms/d/e/1FAIpQLSds3YMwo4DdhS3dSHaRQ6lWib8vu0n8unOb9UKXcqN-S8F44A/viewform",
       ];
+
+      // get the container
+      const container = document.getElementById("container");
+
+      // get the exam screen
+      const examScreen = document.getElementById("exam_screen");
+      examScreen.style.display = "none";
+
+      //get iframe
+      const e_iframe = document.getElementById("iframe");
 
       // Get the random test button element
       const randomTestButton = document.getElementById("randomTestButton");
@@ -47,13 +88,17 @@
       // Generate a random test URL
       function generateRandomTestUrl() {
         const randomIndex = Math.floor(Math.random() * testUrls.length);
+        container.style.display = "none";
+        examScreen.style.display = "block";
         return testUrls[randomIndex];
       }
 
       // Add a click event listener to the random test button
       randomTestButton.addEventListener("click", function () {
         const randomTestUrl = generateRandomTestUrl();
-        window.location.href = randomTestUrl;
+        console.log(randomTestUrl);
+        e_iframe.src = randomTestUrl;
+        // window.location.href = randomTestUrl;
       });
 
       const firebaseConfig = {
@@ -69,14 +114,10 @@
       const app = initializeApp(firebaseConfig);
       const auth = getAuth(app);
 
-
       onAuthStateChanged(auth, (user) => {
         if (user) {
-          alert("All the Best !!");
-         
-          
-        } 
-        else{
+          // alert("All the Best !!");
+        } else {
           alert("You are not logged in !!");
           location.replace("index.html");
         }
