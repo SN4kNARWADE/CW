@@ -47,7 +47,6 @@ nav ul li{
 .left{
     font-size: 1.1rem;
     
-  
 }
 
 
@@ -61,7 +60,7 @@ nav ul li a{
     text-decoration: none;
 }
 nav ul li a:hover{
-  color:#f45106;
+  color:#fff;
 }
 
 
